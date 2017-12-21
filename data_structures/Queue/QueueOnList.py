@@ -3,7 +3,7 @@ class Queue():
     def __init__(self):
         self.entries = []
         self.length = 0
-        self.front=0
+        self.front = 0
 
     def __str__(self):
         printed = '<' + str(self.entries)[1:-1] + '>'
@@ -14,7 +14,7 @@ class Queue():
         item to enqueue"""
     def put(self, item):
         self.entries.append(item)
-        self.length = self.length + 1
+        self.length += 1
 
 
     """Dequeues {@code item}
@@ -22,9 +22,9 @@ class Queue():
     @return dequeued
         item that was dequeued"""
     def get(self):
-        self.length = self.length - 1
+        self.length -= 1
         dequeued = self.entries[self.front]
-        self.front-=1
+        self.front += 1
         self.entries = self.entries[self.front:]
         return dequeued
 
